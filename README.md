@@ -1,5 +1,32 @@
 # The-monitoring-panel-for-SKYD
 
+## 📋 Table of Contents
+
+### 📍 System Overview
+1. [Appointment](#-appointment)
+   - [Authentication Process](#-the-authentication-process)
+   - [Data Flow](#-sending-data-to-the-server)
+   - [Dashboard Operations](#-processing-and-display-on-the-dashboard)
+   - [Movement Tracking](#-operational-tracking-of-movements)
+
+### 📊 Event Management
+1. [Event Displays](#-event-displays)
+   - [Data Structure](#-event-data-structure)
+   - [Interface Features](#-interface-features)
+   - [Automatic Clearing](#-data-retention-policy)
+2. [Code Implementation](#code-implementation)
+   - [Data Update](#sample-python-code-for-updating-data)
+   - [Event Display](#sample-code-for-displaying-events)
+
+### 🔐 Security Features
+1. [Web Interface Authorization](#-authorization-in-the-web-interface)
+2. [HTTPS Implementation](#-https-web-interface-and-certificate-generation)
+   - [Certificate Generation](#-certificate-creation-process)
+   - [Flask Configuration](#-flask-https-configuration)
+
+### 👥 Authors
+- [Contact Information](#-authors)
+
 ## 📍 Appointment
 
 To monitor events related to the entrance or exit of users from the building, a web interface has been developed integrated with an access control and management system (ACS) using RFID identification and biometric authentication through facial recognition. This interface provides authorized employees with the ability to monitor user actions in real time, which is critical for ensuring security and access control in the organization's premises.
