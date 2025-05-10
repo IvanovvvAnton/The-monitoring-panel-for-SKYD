@@ -1,0 +1,19 @@
+<body>
+    <div class="date-time" id="date-time"></div>
+    <a href="{{ url_for('logout') }}" class="logout-button">Выйти</a>
+    <div class="container">
+        <h2>Мониторинг СКУД</h2>
+        <button class="clear-button" onclick="clearEvents()">Очистить события</button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th class="sortable" onclick="sortTable('date')">Дата <span class="sort-icon">▲▼</span></th>
+                        <th class="sortable" onclick="sortTable('time')">Время <span class="sort-icon">▲▼</span></th>
+                        <th class="sortable" onclick="sortTable('event_type')">Событие <span class="sort-icon">▲▼</span></th>
+                        <th class="sortable" onclick="sortTable('full_name')">ФИО пользователя <span class="sort-icon">▲▼</span></th>
+                    </tr>
+                </thead>
+                <tbody id="event-table">
+                </tbody>
