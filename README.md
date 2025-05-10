@@ -74,7 +74,11 @@ Example of event display:
 
 ![image](https://github.com/user-attachments/assets/4a6be65d-2f09-4e25-a8fb-e6c2bdeda11c)
 
-🔐 Authorization in the web interface
+Sample code for displaying events:
+
+[To see all events you can use events.py file](events.py)
+
+## 🔐 Authorization in the web interface
 
 To increase security, access to the dashboard is limited by authorization. This data protection mechanism prevents unauthorized access, which is critical for the security of the entire system. The web interface uses a form to enter a username and password, while the entered data is checked on the server, and access is provided only to authorized users.
 
