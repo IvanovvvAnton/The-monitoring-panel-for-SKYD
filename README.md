@@ -61,9 +61,8 @@ The data displayed on the dashboard is erased every 24 hours, an example of impl
 ```
 def clear_events_every_24_hours():
     while True:
-        time.sleep(86400)  # Для тестов 10 сек, потом поставь 86400 (24 часа)
+        time.sleep(86400)  
         try:
-            # Открываем файл и очищаем или создаем его
             with open(EVENTS_FILE, "w", encoding="utf-8") as f:
                 json.dump([], f, ensure_ascii=False, indent=4)
 
