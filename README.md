@@ -76,11 +76,13 @@ Example of event display:
 
 Sample code for displaying events:
 
-[To see all events you can use events.py file](events.py)
+[To see all events you can use events.html file](events.html)
 
 ## 🔐 Authorization in the web interface
 
 To increase security, access to the dashboard is limited by authorization. This data protection mechanism prevents unauthorized access, which is critical for the security of the entire system. The web interface uses a form to enter a username and password, while the entered data is checked on the server, and access is provided only to authorized users.
+
+![image](https://github.com/user-attachments/assets/e3d17a9a-e374-40ef-b42d-d4a410c4b2fa)
 
 Сode on Flask that implements a simple login form with login and password verification.
 
@@ -100,7 +102,7 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -node
 
 After completing these steps, the received server.key (private key) and server.crt (certificate) files were used to configure HTTPS on the server.
 
-![image](https://github.com/user-attachments/assets/dab493a4-efb4-477d-af0d-76abe80bf878)
+![image](https://github.com/user-attachments/assets/7ee0fdce-e2a3-4258-b582-ffacaa146eab)
 
 This ensured the protection of all transmitted data, as well as increased user confidence in the system, ensuring that their data is protected during operation.
 
