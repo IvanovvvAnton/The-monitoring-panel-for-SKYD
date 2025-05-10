@@ -56,3 +56,58 @@ To increase the convenience of displaying information, it is structured and easi
 
 [Sample Python code for updating data update_data.py file](update_data.py)
 
+The data displayed on the dashboard is erased every 24 hours, an example of implementation:
+
+```
+def clear_events_every_24_hours():
+    while True:
+        time.sleep(86400)  # Для тестов 10 сек, потом поставь 86400 (24 часа)
+        try:
+            # Открываем файл и очищаем или создаем его
+            with open(EVENTS_FILE, "w", encoding="utf-8") as f:
+                json.dump([], f, ensure_ascii=False, indent=4)
+
+        except (OSError, IOError):
+            pass
+```
+Example of event display:
+
+![image](https://github.com/user-attachments/assets/4a6be65d-2f09-4e25-a8fb-e6c2bdeda11c)
+
+🔐 Authorization in the web interface
+
+To increase security, access to the dashboard is limited by authorization. This data protection mechanism prevents unauthorized access, which is critical for the security of the entire system. The web interface uses a form to enter a username and password, while the entered data is checked on the server, and access is provided only to authorized users.
+
+Сode on Flask that implements a simple login form with login and password verification.
+
+[Login form in login_form.py file](login_form.py)
+
+## 🌐 HTTPS web interface and certificate generation
+
+To increase the security of interaction with the web interface of the access control system, the HTTPS protocol was configured, which provides data encryption between the server and the client. This prevented the possibility of intercepting confidential information such as usernames, passwords, and other data that could be transmitted while working with the system.
+
+A self-signed SSL/TLS certificate was used to implement HTTPS on the server. This certificate is created to establish a secure connection and ensures that the data between the user and the server is encrypted. If a self-signed certificate is used, the browser notifies the user that the certificate has not been verified by a third party, but in the context of local and test systems, this is a sufficient security measure.
+
+To generate a self-signed certificate and a private key for use in Flask with HTTPS,  use the openssl utility:
+
+```
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes
+```
+
+After completing these steps, the received server.key (private key) and server.crt (certificate) files were used to configure HTTPS on the server.
+
+![image](https://github.com/user-attachments/assets/dab493a4-efb4-477d-af0d-76abe80bf878)
+
+This ensured the protection of all transmitted data, as well as increased user confidence in the system, ensuring that their data is protected during operation.
+
+Below is the code for launching the Flask server using a self-signed TLS certificate:
+
+```
+if __name__ == '__main__':
+    context = ('cert.pem', 'key.pem')  
+    app.run(host='0.0.0.0', port=443, ssl_context=context)
+```
+
+# Authors
+If you have any questions, you can ask them to us by writing to us at email:
+- ivanovvvvvvvanton3829@gmail.com
