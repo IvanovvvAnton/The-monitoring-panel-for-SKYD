@@ -2,30 +2,15 @@
 
 ## 📋 Table of Contents
 
-### 📍 System Overview
 1. [Appointment](#-appointment)
-   - [Authentication Process](#-the-authentication-process)
-   - [Data Flow](#-sending-data-to-the-server)
+2. [Authentication Process](#-the-authentication-process)
+   - [Sending data](#%EF%B8%8F-sending-data-to-the-server)
    - [Dashboard Operations](#-processing-and-display-on-the-dashboard)
-   - [Movement Tracking](#-operational-tracking-of-movements)
-
-### 📊 Event Management
-1. [Event Displays](#-event-displays)
-   - [Data Structure](#-event-data-structure)
-   - [Interface Features](#-interface-features)
-   - [Automatic Clearing](#-data-retention-policy)
-2. [Code Implementation](#code-implementation)
-   - [Data Update](#sample-python-code-for-updating-data)
-   - [Event Display](#sample-code-for-displaying-events)
-
-### 🔐 Security Features
-1. [Web Interface Authorization](#-authorization-in-the-web-interface)
-2. [HTTPS Implementation](#-https-web-interface-and-certificate-generation)
-   - [Certificate Generation](#-certificate-creation-process)
-   - [Flask Configuration](#-flask-https-configuration)
-
-### 👥 Authors
-- [Contact Information](#-authors)
+   - [Movement Tracking](#%EF%B8%8F-operational-tracking-of-movements)
+3. [Event Displays](#-event-displays)
+4. [Web Interface Authorization](#-authorization-in-the-web-interface)
+5. [HTTPS Implementation](#-https-web-interface-and-certificate-generation)
+6. [Authors](#authors)
 
 ## 📍 Appointment
 
@@ -33,7 +18,7 @@ To monitor events related to the entrance or exit of users from the building, a 
 
 The system operation process is as follows:
 
-### 🔍 The authentication process:
+## 🔍 The authentication process:
 
 1 The user approaches the access point, where his RFID card is read using the RC522 RFID module connected to the Arduino.
 
@@ -41,11 +26,11 @@ The system operation process is as follows:
 
 3 If both stages of verification are successful, the system records the user's full name, the date and time of entry or exit, as well as the type of event (entry or exit).
 
-#### ☁️ Sending data to the server:
+### ☁️ Sending data to the server:
 
 1 All data collected by the system (full name, event type, date and time) is sent to the server in real time using a method implemented in Python (for example, via Flask).
 
-#### 💻 Processing and display on the dashboard:
+### 💻 Processing and display on the dashboard:
 
 1 The server receives this data and transmits it to the web-based monitoring interface, which is automatically updated to display up-to-date data about users in the building.
 
@@ -53,7 +38,7 @@ The system operation process is as follows:
 
 3 For each entry, the user's full name, event type, and timestamp are displayed. Employees who have left the building are displayed as "not in the building", and information about them disappears from the panel as soon as they pass the exit check.
 
-#### 🚶‍♂️ Operational tracking of movements:
+### 🚶‍♂️ Operational tracking of movements:
 
 1 Authorized employees or security systems can monitor in real time who is in the building and who has left it, which allows them to quickly respond to changes.
 
