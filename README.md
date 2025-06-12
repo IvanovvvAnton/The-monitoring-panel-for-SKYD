@@ -66,8 +66,6 @@ To increase the convenience of displaying information, it is structured and easi
 
 - Color coding: To enhance visibility, events can be highlighted in colors, for example, the entrance is green, the exit is red. This helps to quickly identify the type of event and allows you to quickly respond to changes.
 
-[Sample Python code for updating data update_data.py file](update_data.py)
-
 The data displayed on the dashboard is erased every 24 hours, an example of implementation:
 
 ```
